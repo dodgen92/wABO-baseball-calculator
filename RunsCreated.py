@@ -28,3 +28,13 @@ elif operation == "2":
     sf = float(input('Sac Flys: '))
     babip = (hits - hrs) / (ab - hrs - ks + sf)
     print(babip)
+
+elif operation == "3":
+    runsScored = float(input('Runs Scored: '))
+    runsAllowed = float(input('Runs Allowed: '))
+    exp = float(input('Exponent Power- enter 2 for MLB, 2.37 for NFL, and 13.91 for NBA:'))
+    games = float(input('Runs Scored: '))
+    ratio = runsScored / runsAllowed
+    winpct = pow(ratio, exp) / (pow(ratio, exp) + 1)
+    expectedWins = games * winpct
+    print(expectedWins)
