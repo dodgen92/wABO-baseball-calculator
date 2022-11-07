@@ -2,6 +2,7 @@ print ("Select which statistic to calculate")
 print ("1. wOBA")
 print ("2. BABIP")
 print ("3. Pythagorean Wins")
+print ("4. Range Factor per 9 innings")
 operation = input()
 
 
@@ -38,3 +39,10 @@ elif operation == "3":
     winpct = pow(ratio, exp) / (pow(ratio, exp) + 1)
     expectedWins = games * winpct
     print(expectedWins)
+
+elif operation == "4":
+    assists = float(input('Assists: '))
+    po = float(input('Put outs: '))
+    inn = float(input('Innings played: '))
+    rangeFactor = 9 * (po +assists) / inn
+    print(rangeFactor)
