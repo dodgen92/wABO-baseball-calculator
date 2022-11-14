@@ -1,3 +1,78 @@
+from tkinter import *
+
+# Mandatory root widget
+root = Tk()
+root.title("Baseball Metrics Calculator")
+
+#e= Entry(root, width=65, borderwidth= 15)
+#e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+
+#define operations
+def woba():
+    wobaWindow = Toplevel(root)
+    wobaWindow.title("Please enter stats")
+    e= Entry(wobaWindow, width=65, borderwidth= 15)
+    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+
+
+def pythagwins():
+    pythagWindow = Toplevel(root)
+    pythagWindow.title("Please enter stats")
+    e= Entry(pythagWindow, width=65, borderwidth= 15)
+    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+
+def babip():
+    babipWindow = Toplevel(root)
+    babipWindow.title("Please enter stats")
+    e= Entry(babipWindow, width=65, borderwidth= 15)
+    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+
+
+def rangefactor():
+    rf9Window = Toplevel(root)
+    rf9Window.title("Please enter stats")
+    e= Entry(rf9Window, width=65, borderwidth= 15)
+    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+
+
+button_wOBA = Button(root, text="wOBA", padx=200, pady=30, command=woba)
+button_pythag = Button(root, text="expected wins", padx=200, pady=30)
+button_babip = Button(root, text="babip", padx=200, pady=30)
+button_rf9 = Button(root, text="rangefactor", padx=200, pady=30)
+
+#place buttons on grid
+button_wOBA.grid(row=1, column=1)
+button_pythag.grid(row=2, column=1)
+button_babip.grid(row=3, column=1)
+button_rf9.grid(row=4, column=1)
+
+
+"""def myClick():
+    myLabel= Label(root, text="Hello " + e.get(), padx=50, pady=50)#state=disabled)
+    myLabel.pack()
+
+myButton = Button(root, text= "Enter your name", padx=120, pady=200, command=myClick) #, fg="blue", bg="red")
+
+#entry/input widget
+e = Entry(root, width = 50)
+e.pack()
+e.get"""
+
+#Creating label and adding it to root widget)
+#myLabel2 = Label(root, text="Im bloodshot for sure")
+
+#grid system packing
+#myLabel2.grid(row=0, column=1)
+
+#event loop
+root.mainloop()
+
+
+
+
+
+
+""" Saving formulas for GUI
 print ("Select which statistic to calculate")
 print ("1. wOBA")
 print ("2. BABIP")
@@ -46,3 +121,6 @@ elif operation == "4":
     inn = float(input('Innings played: '))
     rangeFactor = 9 * (po +assists) / inn
     print(rangeFactor)
+"""
+
+
