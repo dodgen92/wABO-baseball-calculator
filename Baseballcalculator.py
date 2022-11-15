@@ -11,21 +11,90 @@ root.title("Baseball Metrics Calculator")
 def woba():
     wobaWindow = Toplevel(root)
     wobaWindow.title("Please enter stats")
-    e= Entry(wobaWindow, width=65, borderwidth= 15)
-    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+    
+    #labels
+    bb = Label(wobaWindow, text ="Walks")
+    singles = Label(wobaWindow, text ="Singles")
+    doubles = Label(wobaWindow, text ="Doubles")
+    triples = Label(wobaWindow, text ="Triples")
+    homeruns = Label(wobaWindow, text ="Home Runs")
+    atbats = Label(wobaWindow, text ="At bats")
+    sacflies =Label(wobaWindow, text ="Sacrifice flies")
+    ibbs = Label(wobaWindow, text ="Intentional Walks")
+   
+   
+    #inputwindows
+    bbentry= Entry(wobaWindow, width= 60)
+    singlesentry= Entry(wobaWindow, width= 60)
+    doublesentry= Entry(wobaWindow, width=60)
+    tripleentry= Entry(wobaWindow, width= 60)
+    homerunentry= Entry(wobaWindow, width= 60)
+    atbatsentry= Entry(wobaWindow, width= 60)
+    sacfliesentry= Entry(wobaWindow, width= 60)
+    ibbsentry= Entry(wobaWindow, width= 60)
+    
+   #entry positions
+    bbentry.grid(row=0, column=1)
+    singlesentry.grid(row=1, column=1)
+    doublesentry.grid(row=2, column=1)
+    tripleentry.grid(row=3, column=1)
+    homerunentry.grid(row=4, column=1)
+    atbatsentry.grid(row=5, column=1)
+    sacfliesentry.grid(row=6, column=1)
+    ibbsentry.grid(row=7, column=1)
+    
+    #label positions
+    bb.grid (row=0, column=0)
+    singles.grid (row=1, column=0)
+    doubles.grid (row=2, column=0)
+    triples.grid (row=3, column=0)
+    homeruns.grid (row=4, column=0)
+    atbats.grid (row=5, column=0)
+    sacflies.grid (row=6, column=0)
+    ibbs.grid (row=7, column=0)
+
+
+
+
+
+
+
+
 
 
 def pythagwins():
     pythagWindow = Toplevel(root)
     pythagWindow.title("Please enter stats")
-    e= Entry(pythagWindow, width=65, borderwidth= 15)
-    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+    
+
+    #labels
+    runsscored= Label(pythagWindow, text ="Runs scored")
+    runsallowed= Label(pythagWindow, text ="Runs Allowed")
+    season= Label(pythagWindow, text ="Length of season")
+
+    #inputs
+    runsscoredentry= Entry(pythagWindow, width= 60)
+    runsallowedentry= Entry(pythagWindow, width= 60)
+    seasonentry= Entry(pythagWindow, width= 60)
+
+
+    #input positions
+    runsscoredentry.grid(row=0, column=1)
+    runsallowedentry.grid(row=1, column=1)
+    seasonentry.grid(row=2, column=1)
+
+    #label positions
+    runsscored.grid (row=0, column=0)
+    runsallowed.grid (row=1, column=0)
+    season.grid (row=2, column=0)
+
 
 def babip():
     babipWindow = Toplevel(root)
     babipWindow.title("Please enter stats")
-    e= Entry(babipWindow, width=65, borderwidth= 15)
-    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+    
+    #labels
+
 
 
 def rangefactor():
@@ -36,7 +105,7 @@ def rangefactor():
 
 
 button_wOBA = Button(root, text="wOBA", padx=200, pady=30, command=woba)
-button_pythag = Button(root, text="expected wins", padx=200, pady=30)
+button_pythag = Button(root, text="expected wins", padx=200, pady=30, command=pythagwins)
 button_babip = Button(root, text="babip", padx=200, pady=30)
 button_rf9 = Button(root, text="rangefactor", padx=200, pady=30)
 
