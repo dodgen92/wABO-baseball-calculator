@@ -94,6 +94,33 @@ def babip():
     babipWindow.title("Please enter stats")
     
     #labels
+    hits= Label(babipWindow, text = "Hits")
+    homers= Label(babipWindow, text = "Home Runs")
+    ks= Label(babipWindow, text = "Strikeouts")
+    atbatts= Label(babipWindow, text = "At bats")
+    sacrificeflies= Label(babipWindow, text = "Sac Flies")
+
+    #inputs
+    hitsentry= Entry(babipWindow, width= 60)
+    homersentry= Entry(babipWindow, width= 60)
+    ksentry= Entry(babipWindow, width= 60)
+    atbattssentry= Entry(babipWindow, width= 60)
+    sacrificefliesentry = Entry(babipWindow, width= 60)
+
+    #input positions
+
+    hitsentry.grid(row=0, column=1)
+    homersentry.grid(row=1, column=1)
+    ksentry.grid(row=2, column=1)
+    atbattssentry.grid(row=3, column=1)
+    sacrificefliesentry.grid(row=4, column=1)
+
+    #label positions
+    hits.grid (row=0, column =0)
+    homers.grid (row=1, column=0)
+    ks.grid(row=2, column=0)
+    atbatts.grid(row=3, column=0)
+    sacrificeflies.grid(row=4, column=0)
 
 
 
@@ -106,7 +133,7 @@ def rangefactor():
 
 button_wOBA = Button(root, text="wOBA", padx=200, pady=30, command=woba)
 button_pythag = Button(root, text="expected wins", padx=200, pady=30, command=pythagwins)
-button_babip = Button(root, text="babip", padx=200, pady=30)
+button_babip = Button(root, text="babip", padx=200, pady=30, command=babip)
 button_rf9 = Button(root, text="rangefactor", padx=200, pady=30)
 
 #place buttons on grid
@@ -191,5 +218,6 @@ elif operation == "4":
     rangeFactor = 9 * (po +assists) / inn
     print(rangeFactor)
 """
+
 
 
