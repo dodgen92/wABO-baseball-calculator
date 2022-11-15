@@ -125,16 +125,34 @@ def babip():
 
 
 def rangefactor():
-    rf9Window = Toplevel(root)
-    rf9Window.title("Please enter stats")
-    e= Entry(rf9Window, width=65, borderwidth= 15)
-    e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+    rfWindow = Toplevel(root)
+    rfWindow.title("Please enter stats")
+
+    #labels
+    assists= Label(rfWindow, text = "Assists")
+    putouts= Label(rfWindow, text= "Putouts")
+    innings= Label(rfWindow, text= "Innings")
+
+    #inputs
+    assistsentry= Entry(rfWindow, width=60)
+    putoutsentry= Entry(rfWindow, width=60)
+    inningsentry= Entry(rfWindow, width=60)
+
+    #input positions
+    assistsentry.grid(row=0, column=1)
+    putoutsentry.grid(row=1, column=1)
+    inningsentry.grid(row=2, column=1)
+
+    #label positions
+    assists.grid (row=0, column =0)
+    putouts.grid (row=1, column =0)
+    innings.grid (row=2, column =0)
 
 
 button_wOBA = Button(root, text="wOBA", padx=200, pady=30, command=woba)
 button_pythag = Button(root, text="expected wins", padx=200, pady=30, command=pythagwins)
 button_babip = Button(root, text="babip", padx=200, pady=30, command=babip)
-button_rf9 = Button(root, text="rangefactor", padx=200, pady=30)
+button_rf9 = Button(root, text="rangefactor", padx=200, pady=30,command=rangefactor)
 
 #place buttons on grid
 button_wOBA.grid(row=1, column=1)
