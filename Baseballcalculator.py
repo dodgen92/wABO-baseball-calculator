@@ -1,185 +1,151 @@
 from tkinter import *
+import tkinter.messagebox
 
-# Mandatory root widget
-root = Tk()
-root.title("Baseball Metrics Calculator")
+def babipentry():
+    babipinput = Tk()
+    L15 = Label(babipinput, text = "BABIP", fg="red", font = "Times")
+    L15.grid(row=1, column=1)
+    L16= Label(babipinput, text = "Hits", font = "Times")
+    L16.grid(row=2, column=1)
+    L17= Label(babipinput, text = "Home Runs", font = "Times")
+    L17.grid(row=3, column=1)
+    L18= Label(babipinput, text = "At bats", font = "Times")
+    L18.grid(row=4, column=1)
+    L19= Label(babipinput, text = "Strikeouts", font = "Times")
+    L19.grid(row=5, column=1)
+    L20= Label(babipinput, text = "Sac flies", font = "Times")
+    L20.grid(row=6, column=1)
+    E14= Entry(babipinput, width= 60)
+    E14.grid(row=2, column=2)
+    E15= Entry(babipinput, width= 60)
+    E15.grid(row=3, column=2)
+    E16= Entry(babipinput, width= 60)
+    E16.grid(row=4, column=2)
+    E17= Entry(babipinput, width= 60)
+    E17.grid(row=5, column=2)
+    E18= Entry(babipinput, width= 60)
+    E18.grid(row=6, column=2)
+    B4 = Button (babipinput, text='Calculate BABIP', command = lambda: BABIP(E14, E15, E16, E17, E18) )
+    B4.grid (row=7, column=2)
 
-#e= Entry(root, width=65, borderwidth= 15)
-#e.grid(row=-0, column=0, columnspan=3, padx=10, pady=10)
+def BABIP(E14, E15, E16, E17, E18):
+    babipoutput = Tk()
+    L21 = Label (babipoutput, text = "BABIP", fg="red", font = "times")
+    L21.grid (row=1, column = 1)
+    E19 = Entry(babipoutput, bd=5)
+    E19.grid(row=2, column=1)
+    hits = float(E14.get())
+    hrs = float(E15.get())
+    atbats = float(E16.get())
+    ks = float(E17.get())
+    sf = float(E18.get())
+    babip = (hits - hrs) / (atbats - hrs - ks + sf)
+    E19.insert(0, str(babip))
+    E12['bg']='grey'
 
-#define operations
-def woba():
-    wobaWindow = Toplevel(root)
-    wobaWindow.title("Please enter stats")
-    
-    #labels
-    bb = Label(wobaWindow, text ="Walks")
-    singles = Label(wobaWindow, text ="Singles")
-    doubles = Label(wobaWindow, text ="Doubles")
-    triples = Label(wobaWindow, text ="Triples")
-    homeruns = Label(wobaWindow, text ="Home Runs")
-    atbats = Label(wobaWindow, text ="At bats")
-    sacflies =Label(wobaWindow, text ="Sacrifice flies")
-    ibbs = Label(wobaWindow, text ="Intentional Walks")
-   
-   
-    #inputwindows
-    bbentry= Entry(wobaWindow, width= 60)
-    singlesentry= Entry(wobaWindow, width= 60)
-    doublesentry= Entry(wobaWindow, width=60)
-    tripleentry= Entry(wobaWindow, width= 60)
-    homerunentry= Entry(wobaWindow, width= 60)
-    atbatsentry= Entry(wobaWindow, width= 60)
-    sacfliesentry= Entry(wobaWindow, width= 60)
-    ibbsentry= Entry(wobaWindow, width= 60)
-    
-   #entry positions
-    bbentry.grid(row=0, column=1)
-    singlesentry.grid(row=1, column=1)
-    doublesentry.grid(row=2, column=1)
-    tripleentry.grid(row=3, column=1)
-    homerunentry.grid(row=4, column=1)
-    atbatsentry.grid(row=5, column=1)
-    sacfliesentry.grid(row=6, column=1)
-    ibbsentry.grid(row=7, column=1)
-    
-    #label positions
-    bb.grid (row=0, column=0)
-    singles.grid (row=1, column=0)
-    doubles.grid (row=2, column=0)
-    triples.grid (row=3, column=0)
-    homeruns.grid (row=4, column=0)
-    atbats.grid (row=5, column=0)
-    sacflies.grid (row=6, column=0)
-    ibbs.grid (row=7, column=0)
-
-
-
-
-
-
-
-
-
-
-def pythagwins():
-    pythagWindow = Toplevel(root)
-    pythagWindow.title("Please enter stats")
     
 
-    #labels
-    runsscored= Label(pythagWindow, text ="Runs scored")
-    runsallowed= Label(pythagWindow, text ="Runs Allowed")
-    season= Label(pythagWindow, text ="Length of season")
+def wobaentry():
+    wobainput= Tk()
+    L4 = Label(wobainput, text = "wOBA", fg = "red", font = "Times").grid(row=1, column=1)
+    L5 = Label(wobainput, text ="Walks").grid(row=2, column=1)
+    L6 = Label(wobainput, text ="Singles").grid(row=3, column=1)
+    L7 = Label(wobainput, text ="Doubles").grid(row=4, column=1)
+    L8 = Label(wobainput, text ="Triples").grid(row=5, column=1)
+    L9 = Label(wobainput, text ="Home Runs").grid(row=6, column=1)
+    L10 = Label(wobainput, text ="At bats").grid(row=7, column=1)
+    L11 =Label(wobainput, text ="Sacrifice flies").grid(row=8, column=1)
+    L12 = Label(wobainput, text ="Intentional Walks").grid(row=9, column=1)
+    L14 = Label(wobainput, text ="Hit By Pitch").grid(row=10, column=1)
+    E4= Entry(wobainput, width= 60)
+    E4.grid(row=2, column=2)
+    E5= Entry(wobainput, width= 60)
+    E5.grid(row=3, column=2)
+    E6= Entry(wobainput, width= 60)
+    E6.grid(row=4, column=2)
+    E7= Entry(wobainput, width= 60)
+    E7.grid(row=5, column=2)
+    E8= Entry(wobainput, width= 60)
+    E8.grid(row=6, column=2)
+    E9= Entry(wobainput, width= 60)
+    E9.grid(row=7, column=2)
+    E10= Entry(wobainput, width= 60)
+    E10.grid(row=8, column=2)
+    E11= Entry(wobainput, width= 60)
+    E11.grid(row=9, column=2)
+    E13= Entry(wobainput, width= 60)
+    E13.grid(row=10, column=2)
+    B5= Button(wobainput, text= "Calculate wOBA", command = lambda: wOBA(E4, E5, E6, E7, E8, E9, E10, E11, E13) )
+    B5.grid(row=15, column=2)
 
-    #inputs
-    runsscoredentry= Entry(pythagWindow, width= 60)
-    runsallowedentry= Entry(pythagWindow, width= 60)
-    seasonentry= Entry(pythagWindow, width= 60)
-
-
-    #input positions
-    runsscoredentry.grid(row=0, column=1)
-    runsallowedentry.grid(row=1, column=1)
-    seasonentry.grid(row=2, column=1)
-
-    #label positions
-    runsscored.grid (row=0, column=0)
-    runsallowed.grid (row=1, column=0)
-    season.grid (row=2, column=0)
-
-
-def babip():
-    babipWindow = Toplevel(root)
-    babipWindow.title("Please enter stats")
+def wOBA(E4, E5, E6, E7, E8, E9, E10, E11, E13):
+    wOBAoutput = Tk()
+    L13 = Label (wOBAoutput, text = "wOBA", fg="black", font = "times")
+    L13.grid (row=1, column = 1)
+    E12 = Entry(wOBAoutput, bd=5)
+    E12.grid(row=2, column=1)
+    bb = float(E4.get())
+    hbp = float(E13.get())
+    singles = float(E5.get())
+    doubles = float(E6.get())
+    triple = float(E7.get())
+    hr = float(E8.get())
+    ab = float(E9.get())
+    sf = float(E10.get())
+    ibb = float(E11.get())
+    ubb = bb - ibb
+    woba = float(((ubb * .69) + (.720 * hbp) + (.884 * singles) + (1.261 * doubles) + (1.601 * triple) + (2.072 * hr)) / (ab + bb - ibb + sf + hbp))
+    E12.insert(0, str(woba))
+    E12['bg']='grey'
     
-    #labels
-    hits= Label(babipWindow, text = "Hits")
-    homers= Label(babipWindow, text = "Home Runs")
-    ks= Label(babipWindow, text = "Strikeouts")
-    atbatts= Label(babipWindow, text = "At bats")
-    sacrificeflies= Label(babipWindow, text = "Sac Flies")
-
-    #inputs
-    hitsentry= Entry(babipWindow, width= 60)
-    homersentry= Entry(babipWindow, width= 60)
-    ksentry= Entry(babipWindow, width= 60)
-    atbattssentry= Entry(babipWindow, width= 60)
-    sacrificefliesentry = Entry(babipWindow, width= 60)
-
-    #input positions
-
-    hitsentry.grid(row=0, column=1)
-    homersentry.grid(row=1, column=1)
-    ksentry.grid(row=2, column=1)
-    atbattssentry.grid(row=3, column=1)
-    sacrificefliesentry.grid(row=4, column=1)
-
-    #label positions
-    hits.grid (row=0, column =0)
-    homers.grid (row=1, column=0)
-    ks.grid(row=2, column=0)
-    atbatts.grid(row=3, column=0)
-    sacrificeflies.grid(row=4, column=0)
 
 
+def pythagentry():
+    pythaginput = Tk()
+    L0 = Label(pythaginput, text= "Expected Wins", fg="black", font = "Times")
+    L0.grid(row=1, column=1)
+    L1 = Label(pythaginput, text= "Runs Scored", fg="black", font= "Times")
+    L1.grid(row=2, column=1)
+    L2 = Label(pythaginput, text= "Runs Allowed", fg="black", font= "Times")
+    L2.grid(row=3, column=1)
+    L3 = Label(pythaginput, text= "Season Length", fg="black", font= "Times")
+    L3.grid(row=4, column=1)
+    E1 = Entry(pythaginput,bd=5)
+    E1.grid (row=2, column=2)
+    E2 = Entry(pythaginput,bd=5)
+    E2.grid (row=3, column=2)
+    E3 = Entry(pythaginput,bd=5)
+    E3.grid (row=4, column=2)
+    B4 = Button (pythaginput,text='Calculate Pythagorean Wins', command = lambda: pythag(E1, E2, E3) )
+    B4.grid (row=5, column=2)
 
-def rangefactor():
-    rfWindow = Toplevel(root)
-    rfWindow.title("Please enter stats")
+def pythag(E1, E2, E3):
+    pythagoutput = Tk()
+    L4=Label(pythagoutput,text="Expected Wins:",fg="red")
+    L4.grid (row =1, column =1)
+    E5=Entry(pythagoutput, bd=5)
+    E5.grid(row=4,column=1)
+    runsscored= float(E1.get())
+    runsallowed= float(E2.get())
+    lengthseason= float(E3.get())
+    ratio = runsscored / runsallowed
+    winpct = pow (ratio, 2) / (pow(ratio, 2) + 1)
+    expectedwins = lengthseason * winpct
+    E5.insert(0, str(expectedwins))
+    E5['bg']='grey'
 
-    #labels
-    assists= Label(rfWindow, text = "Assists")
-    putouts= Label(rfWindow, text= "Putouts")
-    innings= Label(rfWindow, text= "Innings")
+top = Tk()
+B1=Button(top, text='Calculate Pythagorean Wins',command = pythagentry,bg="grey")
+B1.grid(row=1,column=1)
 
-    #inputs
-    assistsentry= Entry(rfWindow, width=60)
-    putoutsentry= Entry(rfWindow, width=60)
-    inningsentry= Entry(rfWindow, width=60)
+B2=Button(top, text='Calculate wOBA', command=wobaentry, bg="grey")
+B2.grid(row=2, column=1)
 
-    #input positions
-    assistsentry.grid(row=0, column=1)
-    putoutsentry.grid(row=1, column=1)
-    inningsentry.grid(row=2, column=1)
+B3=Button(top, text='Calculate BABIP', command=babipentry, bg="grey")
+B3.grid(row=3, column=1)
 
-    #label positions
-    assists.grid (row=0, column =0)
-    putouts.grid (row=1, column =0)
-    innings.grid (row=2, column =0)
+top.mainloop()
 
-
-button_wOBA = Button(root, text="wOBA", padx=200, pady=30, command=woba)
-button_pythag = Button(root, text="expected wins", padx=200, pady=30, command=pythagwins)
-button_babip = Button(root, text="babip", padx=200, pady=30, command=babip)
-button_rf9 = Button(root, text="rangefactor", padx=200, pady=30,command=rangefactor)
-
-#place buttons on grid
-button_wOBA.grid(row=1, column=1)
-button_pythag.grid(row=2, column=1)
-button_babip.grid(row=3, column=1)
-button_rf9.grid(row=4, column=1)
-
-
-"""def myClick():
-    myLabel= Label(root, text="Hello " + e.get(), padx=50, pady=50)#state=disabled)
-    myLabel.pack()
-
-myButton = Button(root, text= "Enter your name", padx=120, pady=200, command=myClick) #, fg="blue", bg="red")
-
-#entry/input widget
-e = Entry(root, width = 50)
-e.pack()
-e.get"""
-
-#Creating label and adding it to root widget)
-#myLabel2 = Label(root, text="Im bloodshot for sure")
-
-#grid system packing
-#myLabel2.grid(row=0, column=1)
-
-#event loop
-root.mainloop()
 
 
 
