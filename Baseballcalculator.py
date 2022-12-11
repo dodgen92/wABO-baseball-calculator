@@ -25,7 +25,7 @@ def babipentry():
     E17.grid(row=5, column=2)
     E18= Entry(babipinput, width= 60)
     E18.grid(row=6, column=2)
-    B4 = Button (babipinput, text='Calculate BABIP', command = lambda: BABIP(E14, E15, E16, E17, E18) )
+    B4 = Button (babipinput, text='Calculate BABIP', command = lambda: BABIP(E14, E15, E16, E17, E18), bg="red" , padx=15,  font= "Times 14 bold"  )
     B4.grid (row=7, column=2)
 
 def BABIP(E14, E15, E16, E17, E18):
@@ -75,7 +75,7 @@ def wobaentry():
     E11.grid(row=9, column=2)
     E13= Entry(wobainput, width= 60)
     E13.grid(row=10, column=2)
-    B5= Button(wobainput, text= "Calculate wOBA", command = lambda: wOBA(E4, E5, E6, E7, E8, E9, E10, E11, E13) )
+    B5= Button(wobainput, text= "Calculate wOBA", command = lambda: wOBA(E4, E5, E6, E7, E8, E9, E10, E11, E13), bg="red" , padx=15,  font= "Times 14 bold"  )
     B5.grid(row=15, column=2)
 
 def wOBA(E4, E5, E6, E7, E8, E9, E10, E11, E13):
@@ -116,8 +116,8 @@ def pythagentry():
     E2.grid (row=3, column=2)
     E3 = Entry(pythaginput,bd=5)
     E3.grid (row=4, column=2)
-    B4 = Button (pythaginput,text='Calculate Pythagorean Wins', command = lambda: pythag(E1, E2, E3) )
-    B4.grid (row=5, column=2)
+    B4 = Button (pythaginput,text='Calculate Pythagorean Wins', command = lambda: pythag(E1, E2, E3), bg="red" , padx=15,  font= "Times 14 bold" )
+    B4.grid (row=5, column=2, sticky = "ew")
 
 def pythag(E1, E2, E3):
     pythagoutput = Tk()
@@ -135,17 +135,18 @@ def pythag(E1, E2, E3):
     E5['bg']='grey'
 
 top = Tk()
-B1=Button(top, text='Calculate Pythagorean Wins',command = pythagentry,bg="grey")
-B1.grid(row=1,column=1)
+B1=Button(top, bd = 10, text='Calculate Pythagorean Wins',command = pythagentry, padx=30 ,bg="grey" , font= "Times 18 bold")
+B1.grid(row=1,column=1, sticky="ew")
 
-B2=Button(top, text='Calculate wOBA', command=wobaentry, bg="grey")
-B2.grid(row=2, column=1)
+B2=Button(top, text='Calculate wOBA' , bd= 10, padx = 30, command=wobaentry, bg="grey" , font= "Times 18 bold")
+B2.grid(row=2, column=1, sticky="ew")
 
-B3=Button(top, text='Calculate BABIP', command=babipentry, bg="grey")
-B3.grid(row=3, column=1)
+B3=Button(top, text='Calculate BABIP', bd=10 ,command=babipentry, bg="grey" , padx=30,  font= "Times 18 bold")
+B3.grid(row=3, column=1, sticky="ew")
 
+devlabel = Label(top, text='Developed by Tyler Remington Dodgen' , fg= "Blue", font= "Times 14")
+devlabel.grid (row=4, column=1, sticky="ew")
 top.mainloop()
-
 
 
 
